@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Phone Repair Zone</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,600,700,900&display=swap"/>
+    <link rel="icon" href="logo.jpg" sizes="32x32"/>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17861468703"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-17861468703');
+    </script>
+</head>
+<body>
+    <div id="page" class="site">
+        <header id="masthead">
+            <div class="header-container">
+                <div class="header-inner">
+                    <div class="logo-section">
+                        <a href="index.html">
+                            <img src="logo.jpg" alt="Phone Repair Zone" class="logo-img" onerror="this.src='assets/logo.svg'"/>
+                        </a>
+                    </div>
+                    <div class="header-text">
+                        <h4>Phone Repair Zone</h4>
+                    </div>
+                    <div class="header-cta">
+                        <a class="btn-call" href="tel:+16028974917">
+                            <span class="icon">📞</span>
+                            <span>Call Us: (602) 897 - 4917</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="header-notice">
+                <p>Phone Repair Zone operates <a href="https://phonerepairzoneaz.com/" target="_blank">phonerepairzoneaz.com</a> as our official website.</p>
+            </div>
+        </header>
+
+        <main>
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-content">
+                    <div class="hero-form-wrapper">
+                        <div class="hero-image">
+                            <img src="wall.jpg" alt="Phone Repair Zone" onerror="this.src='assets/photo1.svg'"/>
+                            <img src="inside.jpg" alt="Phone Repair Zone Interior" onerror="this.src='assets/photo2.svg'"/>
+                        </div>
+                        
+                        <div class="hero-text">
+                            <h2>Professional Device Services Center In AZ</h2>
+                            <p>Professional hardware and component services for smartphones, tablets, and computers. Same-day options may be available depending on part availability.</p>
+                            <p class="pricing-notice"><strong>Pricing Transparency:</strong> All pricing is provided upfront before any service begins. No hidden fees.</p>
+                        </div>
+                        
+                        <form class="hero-form" id="serviceForm" action="https://formspree.io/f/mgoovkzz" method="POST">
+                            <input type="hidden" name="_subject" value="New Service Request - Phone Repair Zone">
+                            <input type="hidden" name="_next" value="https://service.phonerepairzoneaz.com/thank-you.html">
+                            
+                            <h3>Request a Service</h3>
+                            
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" placeholder="John Doe" required/>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="(602) 897-4917" required/>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="your@email.com" required/>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="device">Device Type</label>
+                                <select id="device" name="device" required>
+                                    <option value="">Select a device</option>
+                                    <option value="iPhone">iPhone</option>
+                                    <option value="Android">Android Phone</option>
+                                    <option value="Tablet">Tablet</option>
+                                    <option value="Laptop">Laptop</option>
+                                    <option value="Desktop">Desktop</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="issue">Issue Description</label>
+                                <textarea id="issue" name="issue" placeholder="Describe the problem with your device..." rows="4" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">Submit Service Request</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Process Steps -->
+            <section class="process-section">
+                <h2>Device Service Process – Step by Step</h2>
+                <p class="section-subtitle">Many services may be completed the same day, depending on device condition and part availability.</p>
+                <div class="process-grid">
+                    <div class="process-card">
+                        <div class="process-icon">🏪</div>
+                        <h3>Walk Into Our Store</h3>
+                        <p>Tell us what's going on with your device. We'll listen, evaluate, and note your needs.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-icon">🔍</div>
+                        <h3>We Get to Work</h3>
+                        <p>Our technicians provide careful, detail‑oriented device care using high‑quality components and industry‑standard tools.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-icon">📏</div>
+                        <h3>Test Your Device</h3>
+                        <p>You'll be able to check key functions on the spot to confirm the service was completed as discussed.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-icon">👍</div>
+                        <h3>Leave Confident</h3>
+                        <p>Once you're satisfied with the completed service, you're ready to go.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section class="about-section">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>About Us</h2>
+                        <p>We provide diagnostics and component-level services using industry-standard tools and established service methods. Whether you're experiencing display issues, power concerns, software-related performance symptoms, or general hardware conditions, our technicians are available to assist with evaluation and service options. We service a broad range of electronics, including smartphones, tablets, laptops, and desktop computers, and offer independent device support focused on clear communication and practical service options. Our approach emphasizes transparency, efficient service processes, and customer care throughout the service experience.</p>
+                        <a class="btn btn-primary" href="tel:+16028974917">
+                            <span>📞</span> Call Us
+                        </a>
+                    </div>
+                    <div class="about-image">
+                        <img src="Screenshot-2026-01-07-124914.png" alt="About Us" onerror="this.src='fardin.jpg'"/>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Why Choose Us -->
+            <section class="features-section">
+                <h2>Why Choose Phone Repair Zone</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>Fast Turnaround</h3>
+                        <p>Most services are completed the same day, depending on part availability and device condition.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>90‑Day Limited Warranty</h3>
+                        <p>Certain hardware-related services include a 90-day limited warranty, subject to terms and conditions.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Transparent Pricing</h3>
+                        <p>No hidden fees. No surprises. You'll always know what to expect before we begin.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Experienced Technicians</h3>
+                        <p>Our team has years of hands‑on experience with a wide range of devices and models.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials -->
+            <section class="testimonials-section">
+                <h2>What Our Customers Are Saying</h2>
+                <p class="section-subtitle">Customer reviews are user-submitted and reflect individual experiences.</p>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <p>Great place with excellent service. The team was friendly, knowledgeable, and very efficient. Everything was handled quickly and smoothly. Highly recommend!</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>Outstanding customer service from start to finish. The staff went above and beyond and made the whole experience easy and stress-free. I'll definitely be coming back.</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>Fantastic experience overall. Clear communication, fair pricing, and fast service. Easily one of the best businesses I've dealt with. Highly recommended!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services & Warranty -->
+            <section class="services-warranty-section">
+                <h2>Our Services, Warranty & Transparency Promise</h2>
+                <div class="services-warranty-grid">
+                    <div class="info-card">
+                        <div class="info-header">
+                            <span class="info-icon">⚙️</span>
+                            <h3>Our Device Services</h3>
+                        </div>
+                        <p>We offer a full range of hardware and component‑related services, including:</p>
+                        <ul>
+                            <li>Display & touch panel component service</li>
+                            <li>Battery component service</li>
+                            <li>Back glass and housing service</li>
+                            <li>Charging port component service</li>
+                            <li>Camera & lens component service</li>
+                            <li>Speaker and microphone service</li>
+                            <li>Diagnostic testing</li>
+                            <li>Device cleaning and maintenance</li>
+                        </ul>
+                        <p>All services are performed using premium parts and industry‑standard tools.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-header">
+                            <span class="info-icon">🛡️</span>
+                            <h3>90‑Day Limited Warranty</h3>
+                        </div>
+                        <p>We stand behind our work. Most services include a 90‑day limited warranty, which covers:</p>
+                        <h5>✔ Covered</h5>
+                        <ul>
+                            <li>Component defects</li>
+                            <li>Workmanship issues</li>
+                            <li>Touch/display malfunctions related to installed parts</li>
+                        </ul>
+                        <h5>❌ Not Covered</h5>
+                        <ul>
+                            <li>Physical damage after service</li>
+                            <li>Liquid exposure</li>
+                            <li>Damage caused by misuse or unauthorized third-party work</li>
+                            <li>Issues unrelated to the original service</li>
+                            <li>Software issues or data loss</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-header">
+                            <span class="info-icon">📋</span>
+                            <h3>Transparency & Customer Protection</h3>
+                        </div>
+                        <h5>✔ Clear Business Identity</h5>
+                        <ul class="contact-list">
+                            <li><a href="https://maps.app.goo.gl/PpAUg5F6bbAVJbVz7">📍 5830 W Thunderbird Rd Suite B-12, Glendale, AZ 85306</a></li>
+                            <li><a href="tel:6028974917">📞 (602) 897-4917</a></li>
+                            <li><a href="mailto:support@suncityphone.us">✉️ support@suncityphone.us</a></li>
+                            <li>🕐 Monday to Friday: 9 AM – 6 PM<br>Saturday 10 AM –4 PM<br>Sunday: 12 PM – 6 PM</li>
+                        </ul>
+                        <h5>✔ No Misleading Claims</h5>
+                        <p>We do not guarantee unrealistic outcomes or exaggerated performance.</p>
+                        <h5>✔ No Hidden Fees</h5>
+                        <p>All pricing is disclosed before service begins</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-header">
+                            <span class="info-icon">🪟</span>
+                            <h3>Brand Affiliation Disclaimer</h3>
+                        </div>
+                        <p>Phone Repair Zone is an independent device service provider.<br/>We are not affiliated with, endorsed by, or authorized by Apple, Samsung, Google, Motorola, LG, or any other manufacturer.<br/>All trademarks, logos, and brand names are the property of their respective owners.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-header">
+                            <span class="info-icon">🔒</span>
+                            <h3>Privacy & Data Protection</h3>
+                        </div>
+                        <p>We collect only the information needed to provide service — such as your name, contact details, and device information.<br/>We do not sell or rent your data.</p>
+                        <p>Customers are responsible for backing up data prior to service. Phone Repair Zone is not responsible for data loss</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-header">
+                            <span class="info-icon">📄</span>
+                            <h3>Terms & Conditions</h3>
+                        </div>
+                        <p>Our Terms & Conditions explain service expectations, payment terms, device requirements, liability limitations, and warranty coverage.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Visit Us Section -->
+            <section class="visit-section">
+                <div class="visit-content">
+                    <div class="visit-info">
+                        <h2>Visit Phone Repair Zone</h2>
+                        <p>Walk‑ins are welcome, and appointments are available for faster service.</p>
+                        <ul class="contact-details">
+                            <li>
+                                <span class="icon">📍</span>
+                                <a href="https://maps.app.goo.gl/PpAUg5F6bbAVJbVz7">5830 W Thunderbird Rd Suite B-12, Glendale, AZ 85306</a>
+                            </li>
+                            <li>
+                                <span class="icon">📞</span>
+                                <a href="tel:6028974917">(602) 897 - 4917</a>
+                            </li>
+                            <li>
+                                <span class="icon">✉️</span>
+                                <a href="mailto:support@phonerepairzone.us">support@phonerepairzone.us</a>
+                            </li>
+                            <li>
+                                <span class="icon">🕐</span>
+                                <span>Monday to Friday: 9 AM – 6 PM<br>Saturday 10 AM –4 PM<br>Sunday: 12 PM – 6 PM</span>
+                            </li>
+                        </ul>
+                        <p>We look forward to helping you with your device needs.</p>
+                    </div>
+                    <div class="visit-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3941.4251798934997!2d-112.18606832383688!3d33.61209554084237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b69fd4b4b70ef%3A0xdce5bb0fcd6beb88!2sPhone%20repair%20zone!5e1!3m2!1sen!2sus!4v1768421011898!5m2!1sen!2sus" width="100%" height="450" style="border:0;border-radius:20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer id="colophon">
+            <div class="footer-container">
+                <div class="footer-grid">
+                    <div class="footer-column">
+                        <h2>Phone Repair Zone</h2>
+                        <ul class="footer-contact">
+                            <li>
+                                <span class="icon">📍</span>
+                                <a href="https://maps.app.goo.gl/PpAUg5F6bbAVJbVz7">5830 W Thunderbird Rd Suite B-12, Glendale, AZ 85306</a>
+                            </li>
+                            <li>
+                                <span class="icon">📞</span>
+                                <a href="tel:6028974917">(602) 897 - 4917</a>
+                            </li>
+                            <li>
+                                <span class="icon">✉️</span>
+                                <a href="mailto:info@phonerepairzoneaz.com">info@phonerepairzoneaz.com</a>
+                            </li>
+                            <li>
+                                <span class="icon">🕐</span>
+                                <span>Monday to Friday: 9 AM – 6 PM<br>Saturday 10 AM –4 PM<br>Sunday: 12 PM – 6 PM</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h2>DEVICE SERVICES</h2>
+                        <ul>
+                            <li>• Display & touch panel component service</li>
+                            <li>• Battery component service</li>
+                            <li>• Charging port component service</li>
+                            <li>• Camera & lens component service</li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h2>QUICK LINKS</h2>
+                        <ul>
+                            <li>• Privacy Policy</li>
+                            <li>• Terms & Conditions</li>
+                            <li>• Warranty / Refund Policy</li>
+                            <li>• Brand Disclaimer</li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h2>LEGAL</h2>
+                        <p>Phone Repair Zone is an independent device service provider.</p>
+                        <p>We are not affiliated with Apple, Samsung, Google, Motorola, LG, or any manufacturer.</p>
+                        <p>All trademarks belong to their respective owners.</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>© <a href="#">Phone Repair Zone</a>. All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
