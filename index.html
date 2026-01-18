@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Phone Repair Zone</title>
-    <link rel="stylesheet" href="styles.css"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,600,700,900&display=swap"/>
-    <link rel="icon" href="logo.jpg" sizes="32x32"/>
-    
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,600,700,900&display=swap" />
+    <link rel="icon" href="logo.jpg" sizes="32x32" />
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17861468703"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-      gtag('config', 'AW-17861468703');
+        gtag('config', 'AW-17861468703');
     </script>
 </head>
+
 <body>
     <div id="page" class="site">
         <header id="masthead">
@@ -25,7 +28,8 @@
                 <div class="header-inner">
                     <div class="logo-section">
                         <a href="index.html">
-                            <img src="logo.jpg" alt="Phone Repair Zone" class="logo-img" onerror="this.src='assets/logo.svg'"/>
+                            <img src="logo.jpg" alt="Phone Repair Zone" class="logo-img"
+                                onerror="this.src='assets/logo.svg'" />
                         </a>
                     </div>
                     <div class="header-text">
@@ -40,7 +44,8 @@
                 </div>
             </div>
             <div class="header-notice">
-                <p>Phone Repair Zone operates <a href="https://phonerepairzoneaz.com/" target="_blank">phonerepairzoneaz.com</a> as our official website.</p>
+                <p>Phone Repair Zone operates <a href="https://phonerepairzoneaz.com/"
+                        target="_blank">phonerepairzoneaz.com</a> as our official website.</p>
             </div>
         </header>
 
@@ -50,40 +55,43 @@
                 <div class="hero-content">
                     <div class="hero-form-wrapper">
                         <div class="hero-image">
-                            <img src="wall.jpg" alt="Phone Repair Zone" onerror="this.src='assets/photo1.svg'"/>
-                            <img src="inside.jpg" alt="Phone Repair Zone Interior" onerror="this.src='assets/photo2.svg'"/>
+                            <img src="wall.jpg" alt="Phone Repair Zone" onerror="this.src='assets/photo1.svg'" />
+                            <img src="inside.jpg" alt="Phone Repair Zone Interior"
+                                onerror="this.src='assets/photo2.svg'" />
                         </div>
-                        
-                        <div class="hero-text">
-                            <h2>Professional Device Services Center In AZ</h2>
-                            <p>Professional hardware and component services for smartphones, tablets, and computers. Same-day options may be available depending on part availability.</p>
-                            <p class="pricing-notice"><strong>Pricing Transparency:</strong> All pricing is provided upfront before any service begins. No hidden fees.</p>
+
+                        <div class="hero-text"
+                            style="padding: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); position: relative;">
                         </div>
-                        
-                        <form class="hero-form" id="serviceForm" action="https://formspree.io/f/mgoovkzz" method="POST">
-                            <input type="hidden" name="_subject" value="New Service Request - Phone Repair Zone">
-                            <input type="hidden" name="_next" value="https://service.phonerepairzoneaz.com/thank-you.html">
-                            
+
+                        <form class="hero-form" id="serviceForm">
                             <h3>Request a Service</h3>
-                            
+
+                            <!-- Success/Error Message Container -->
+                            <div id="formMessage"
+                                style="display: none; padding: 15px; border-radius: 8px; margin-bottom: 20px; font-size: 14px;">
+                            </div>
+
                             <div class="form-group">
                                 <label for="name">Your Name</label>
-                                <input type="text" id="name" name="name" placeholder="John Doe" required/>
+                                <input type="text" id="name" name="contact_name" placeholder="John Doe" required />
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone" placeholder="(602) 897-4917" required/>
+                                <input type="tel" id="phone" name="contact_phone" placeholder="(602) 897-4917"
+                                    required />
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="email">Email Address</label>
-                                <input type="email" id="email" name="email" placeholder="your@email.com" required/>
+                                <input type="email" id="email" name="contact_email" placeholder="your@email.com"
+                                    required />
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="device">Device Type</label>
-                                <select id="device" name="device" required>
+                                <select id="device" name="contact_device" required>
                                     <option value="">Select a device</option>
                                     <option value="iPhone">iPhone</option>
                                     <option value="Android">Android Phone</option>
@@ -93,22 +101,583 @@
                                     <option value="Other">Other</option>
                                 </select>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="issue">Issue Description</label>
-                                <textarea id="issue" name="issue" placeholder="Describe the problem with your device..." rows="4" required></textarea>
+                                <textarea id="issue" name="contact_message"
+                                    placeholder="Describe the problem with your device..." rows="4" required></textarea>
                             </div>
-                            
-                            <button type="submit" class="btn btn-primary">Submit Service Request</button>
+                            <button type="submit" class="btn btn-primary" id="submitBtn">Submit Service Request</button>
                         </form>
+                        <!-- Add this JavaScript before closing </body> tag -->
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function () {
+                                const form = document.getElementById('serviceForm');
+                                const submitBtn = document.getElementById('submitBtn');
+                                const messageDiv = document.getElementById('formMessage');
+
+                                form.addEventListener('submit', async function (e) {
+                                    e.preventDefault();
+
+                                    // Disable button and show loading
+                                    submitBtn.disabled = true;
+                                    submitBtn.textContent = 'Sending...';
+                                    messageDiv.style.display = 'none';
+
+                                    try {
+                                        // Step 1: Get nonce from WordPress
+                                        console.log('Fetching nonce...');
+                                        const nonceResponse = await fetch('https://phonerepairzoneaz.com/wp-json/apple-repair/v1/get-nonce', {
+                                            method: 'GET',
+                                            credentials: 'include',
+                                            headers: {
+                                                'Accept': 'application/json'
+                                            }
+                                        });
+
+                                        if (!nonceResponse.ok) {
+                                            throw new Error('Failed to get security token');
+                                        }
+
+                                        const nonceData = await nonceResponse.json();
+                                        console.log('Nonce received:', nonceData);
+
+                                        // Step 2: Prepare form data
+                                        const formData = new FormData(form);
+                                        formData.append('action', 'apple_contact');
+                                        formData.append('apple_contact_nonce', nonceData.nonce);
+
+                                        // Step 3: Submit to WordPress
+                                        console.log('Submitting form...');
+                                        const submitResponse = await fetch('https://phonerepairzoneaz.com/wp-admin/admin-post.php', {
+                                            method: 'POST',
+                                            credentials: 'include',
+                                            body: formData,
+                                            headers: {
+                                                'X-Requested-With': 'XMLHttpRequest'
+                                            }
+                                        });
+
+                                        console.log('Response status:', submitResponse.status);
+
+                                        // Try to parse JSON response
+                                        let result;
+                                        try {
+                                            result = await submitResponse.json();
+                                            console.log('Response:', result);
+                                        } catch (e) {
+                                            // If not JSON, check if redirect happened
+                                            if (submitResponse.ok) {
+                                                result = { success: true };
+                                            } else {
+                                                throw new Error('Invalid response from server');
+                                            }
+                                        }
+
+                                        if (result.success || submitResponse.ok) {
+                                            // Show success message
+                                            messageDiv.style.display = 'block';
+                                            messageDiv.style.backgroundColor = '#d1fae5';
+                                            messageDiv.style.color = '#065f46';
+                                            messageDiv.style.border = '1px solid #34d399';
+                                            messageDiv.textContent = '✓ Message sent successfully! Redirecting...';
+
+                                            // Reset form
+                                            form.reset();
+
+                                            // Redirect after 2 seconds
+                                            setTimeout(() => {
+                                                window.location.href = 'https://phonerepairzoneaz.com/contact/?contact=success';
+                                            }, 2000);
+                                        } else {
+                                            throw new Error(result.data?.message || 'Submission failed');
+                                        }
+
+                                    } catch (error) {
+                                        console.error('Error:', error);
+
+                                        // Show error message
+                                        messageDiv.style.display = 'block';
+                                        messageDiv.style.backgroundColor = '#fee2e2';
+                                        messageDiv.style.color = '#991b1b';
+                                        messageDiv.style.border = '1px solid #ef4444';
+                                        messageDiv.textContent = '✗ There was an error submitting your request. Please try again or call us directly at (602) 897-4917';
+
+                                        // Re-enable button
+                                        submitBtn.disabled = false;
+                                        submitBtn.textContent = 'Submit Service Request';
+                                    }
+                                });
+                            });
+                        </script>
+                    </div>
+                </div>
+            </section>
+            <!-- Testimonials -->
+            <section class="testimonials-section">
+                <h2>What Our Customers Are Saying</h2>
+                <div class="google-badge-center" style="text-align: center; margin-bottom: 30px;">
+                    <a href="https://www.google.com/maps/place/Phone+repair+zone/@33.6120911,-112.1834934,17z"
+                        target="_blank"
+                        style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: #202124; background: white; padding: 8px 16px; border-radius: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.12); border: 1px solid #dadce0;">
+                        <span style="font-weight: 500;">Rated</span>
+                        <span style="font-weight: 700; color: #fabb05;">5.0/5</span>
+                        <span style="color: #fabb05;">★★★★★</span>
+                        <span style="color: #5f6368;">on Google</span>
+                    </a>
+                </div>
+
+                <div class="carousel-container">
+                    <div class="carousel-track" id="testimonialTrack">
+                        <!-- Review 1 -->
+                        <div class="testimonial-card">
+                            <div class="reviewer-header"
+                                style="display: flex; align-items: center; margin-bottom: 12px;">
+                                <div class="reviewer-avatar"
+                                    style="width: 40px; height: 40px; background-color: #7b1fa2; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 12px;">
+                                    L</div>
+                                <div>
+                                    <h4 style="margin: 0; font-size: 16px;">Luciano Mendoza</h4>
+                                    <div style="color: #fabb05;">★★★★★</div>
+                                </div>
+                            </div>
+                            <p style="font-style: italic;">"Great service ! Hands down Hassan is one of the best in this
+                                business! Came with a water damage phone he fixed it in less than a hour ! Thanks for
+                                helping me to get all my data back!"</p>
+                        </div>
+                        <!-- Review 2 -->
+                        <div class="testimonial-card">
+                            <div class="reviewer-header"
+                                style="display: flex; align-items: center; margin-bottom: 12px;">
+                                <div class="reviewer-avatar"
+                                    style="width: 40px; height: 40px; background-color: #1976d2; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 12px;">
+                                    C</div>
+                                <div>
+                                    <h4 style="margin: 0; font-size: 16px;">Cassandra Robidoux</h4>
+                                    <div style="color: #fabb05;">★★★★★</div>
+                                </div>
+                            </div>
+                            <p style="font-style: italic;">"I came here and the owner right away told me he could fix it
+                                no problem... gave me a quote and starting working on it right away. I was able to pick
+                                my phone up same day. It looked brand new again!"</p>
+                        </div>
+                        <!-- Review 3 -->
+                        <div class="testimonial-card">
+                            <div class="reviewer-header"
+                                style="display: flex; align-items: center; margin-bottom: 12px;">
+                                <div class="reviewer-avatar"
+                                    style="width: 40px; height: 40px; background-color: #d32f2f; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 12px;">
+                                    B</div>
+                                <div>
+                                    <h4 style="margin: 0; font-size: 16px;">Bando Kizzle</h4>
+                                    <div style="color: #fabb05;">★★★★★</div>
+                                </div>
+                            </div>
+                            <p style="font-style: italic;">"Hasan is absolutely amazing! Best quality service in not
+                                only the west valley, but in the whole entire Valley... This establishment is extremely
+                                knowledgeable and professional."</p>
+                        </div>
+                        <!-- Review 4 -->
+                        <div class="testimonial-card">
+                            <div class="reviewer-header"
+                                style="display: flex; align-items: center; margin-bottom: 12px;">
+                                <div class="reviewer-avatar"
+                                    style="width: 40px; height: 40px; background-color: #388e3c; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 12px;">
+                                    Z</div>
+                                <div>
+                                    <h4 style="margin: 0; font-size: 16px;">Zawad Khalid</h4>
+                                    <div style="color: #fabb05;">★★★★★</div>
+                                </div>
+                            </div>
+                            <p style="font-style: italic;">"I’ve had my Iphone 15 Pro max screen replacement fixed here
+                                two times and have been completely satisfied... reliable and budget-friendly, this is
+                                definitely the place to go."</p>
+                        </div>
+                        <!-- Review 5 -->
+                        <div class="testimonial-card">
+                            <div class="reviewer-header"
+                                style="display: flex; align-items: center; margin-bottom: 12px;">
+                                <div class="reviewer-avatar"
+                                    style="width: 40px; height: 40px; background-color: #e64a19; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 12px;">
+                                    T</div>
+                                <div>
+                                    <h4 style="margin: 0; font-size: 16px;">Toy Plaza</h4>
+                                    <div style="color: #fabb05;">★★★★★</div>
+                                </div>
+                            </div>
+                            <p style="font-style: italic;">"Stopped by for my daughter’s iPhone 14 Pro Max screen
+                                replacement! Hasan did a really great job! He was very friendly! Will come here again"
+                            </p>
+                        </div>
+                        <!-- Review 6 -->
+                        <div class="testimonial-card">
+                            <div class="reviewer-header"
+                                style="display: flex; align-items: center; margin-bottom: 12px;">
+                                <div class="reviewer-avatar"
+                                    style="width: 40px; height: 40px; background-color: #00796b; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 12px;">
+                                    M</div>
+                                <div>
+                                    <h4 style="margin: 0; font-size: 16px;">Mariah Avila</h4>
+                                    <div style="color: #fabb05;">★★★★★</div>
+                                </div>
+                            </div>
+                            <p style="font-style: italic;">"10/10 !! Very helpful ! Thank you so much!!! Came in 15 mins
+                                before they closed staying until 642 to help me ! I appreciate you!!! Great place !!!!
+                                New phone here I come !!!"</p>
+                        </div>
+                        <!-- Review 7 -->
+                        <div class="testimonial-card">
+                            <div class="reviewer-header"
+                                style="display: flex; align-items: center; margin-bottom: 12px;">
+                                <div class="reviewer-avatar"
+                                    style="width: 40px; height: 40px; background-color: #1565c0; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 12px;">
+                                    C</div>
+                                <div>
+                                    <h4 style="margin: 0; font-size: 16px;">Carlos Silva</h4>
+                                    <div style="color: #fabb05;">★★★★★</div>
+                                </div>
+                            </div>
+                            <p style="font-style: italic;">"Highly recommend . Good service . Fast repair"</p>
+                        </div>
+                        <!-- Review 8 -->
+                        <div class="testimonial-card">
+                            <div class="reviewer-header"
+                                style="display: flex; align-items: center; margin-bottom: 12px;">
+                                <div class="reviewer-avatar"
+                                    style="width: 40px; height: 40px; background-color: #2e7d32; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 12px;">
+                                    M</div>
+                                <div>
+                                    <h4 style="margin: 0; font-size: 16px;">Marcus Naranjo</h4>
+                                    <div style="color: #fabb05;">★★★★★</div>
+                                </div>
+                            </div>
+                            <p style="font-style: italic;">"Got my I phone 15 repaired here, had the best experience
+                                customer service wise was great and fast work. If I have any other electronics that need
+                                fixing I’ll definitely be going here again"</p>
+                        </div>
+                        <!-- Review 9 -->
+                        <div class="testimonial-card">
+                            <div class="reviewer-header"
+                                style="display: flex; align-items: center; margin-bottom: 12px;">
+                                <div class="reviewer-avatar"
+                                    style="width: 40px; height: 40px; background-color: #ef6c00; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 12px;">
+                                    R</div>
+                                <div>
+                                    <h4 style="margin: 0; font-size: 16px;">Raul Carreon</h4>
+                                    <div style="color: #fabb05;">★★★★★</div>
+                                </div>
+                            </div>
+                            <p style="font-style: italic;">"great guy great service overall really really good highly
+                                recommend"</p>
+                        </div>
+                        <!-- Review 10 -->
+                        <div class="testimonial-card">
+                            <div class="reviewer-header"
+                                style="display: flex; align-items: center; margin-bottom: 12px;">
+                                <div class="reviewer-avatar"
+                                    style="width: 40px; height: 40px; background-color: #6a1b9a; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 12px;">
+                                    D</div>
+                                <div>
+                                    <h4 style="margin: 0; font-size: 16px;">Diego Munoz</h4>
+                                    <div style="color: #fabb05;">★★★★★</div>
+                                </div>
+                            </div>
+                            <p style="font-style: italic;">"Good service and good price. Excellent work the repair area
+                                looks small but really good highly professional."</p>
+                        </div>
+                        <!-- Review 11 -->
+                        <div class="testimonial-card">
+                            <div class="reviewer-header"
+                                style="display: flex; align-items: center; margin-bottom: 12px;">
+                                <div class="reviewer-avatar"
+                                    style="width: 40px; height: 40px; background-color: #00838f; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 12px;">
+                                    F</div>
+                                <div>
+                                    <h4 style="margin: 0; font-size: 16px;">Fabian Torres</h4>
+                                    <div style="color: #fabb05;">★★★★★</div>
+                                </div>
+                            </div>
+                            <p style="font-style: italic;">"Great guy fixed my pro 11 same day price was good"</p>
+                        </div>
+                        <!-- Review 12 -->
+                        <div class="testimonial-card">
+                            <div class="reviewer-header"
+                                style="display: flex; align-items: center; margin-bottom: 12px;">
+                                <div class="reviewer-avatar"
+                                    style="width: 40px; height: 40px; background-color: #4527a0; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 12px;">
+                                    B</div>
+                                <div>
+                                    <h4 style="margin: 0; font-size: 16px;">Brandon</h4>
+                                    <div style="color: #fabb05;">★★★★★</div>
+                                </div>
+                            </div>
+                            <p style="font-style: italic;">"Fix my S22 ultra screen same day and he was good and price
+                                cheaper than any other places"</p>
+                        </div>
+                        <!-- Review 13 -->
+                        <div class="testimonial-card">
+                            <div class="reviewer-header"
+                                style="display: flex; align-items: center; margin-bottom: 12px;">
+                                <div class="reviewer-avatar"
+                                    style="width: 40px; height: 40px; background-color: #283593; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 12px;">
+                                    P</div>
+                                <div>
+                                    <h4 style="margin: 0; font-size: 16px;">Patrick Matson</h4>
+                                    <div style="color: #fabb05;">★★★★★</div>
+                                </div>
+                            </div>
+                            <p style="font-style: italic;">"I had a great experience coming here to get my work pc
+                                repaired! He was very helpful... and the pricing was more than fair."</p>
+                        </div>
+                        <!-- Review 14 -->
+                        <div class="testimonial-card">
+                            <div class="reviewer-header"
+                                style="display: flex; align-items: center; margin-bottom: 12px;">
+                                <div class="reviewer-avatar"
+                                    style="width: 40px; height: 40px; background-color: #c62828; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 12px;">
+                                    H</div>
+                                <div>
+                                    <h4 style="margin: 0; font-size: 16px;">Hamid Hasan</h4>
+                                    <div style="color: #fabb05;">★★★★★</div>
+                                </div>
+                            </div>
+                            <p style="font-style: italic;">"Professional and quick service. Best place in glendale area
+                                for any kind repairs."</p>
+                        </div>
+                        <!-- Review 15 -->
+                        <div class="testimonial-card">
+                            <div class="reviewer-header"
+                                style="display: flex; align-items: center; margin-bottom: 12px;">
+                                <div class="reviewer-avatar"
+                                    style="width: 40px; height: 40px; background-color: #ad1457; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 12px;">
+                                    B</div>
+                                <div>
+                                    <h4 style="margin: 0; font-size: 16px;">brandy compton</h4>
+                                    <div style="color: #fabb05;">★★★★★</div>
+                                </div>
+                            </div>
+                            <p style="font-style: italic;">"Quick fast service with reasonable prices!!! Definitely
+                                should go here for repairs!"</p>
+                        </div>
+                        <!-- Review 16 -->
+                        <div class="testimonial-card">
+                            <div class="reviewer-header"
+                                style="display: flex; align-items: center; margin-bottom: 12px;">
+                                <div class="reviewer-avatar"
+                                    style="width: 40px; height: 40px; background-color: #0277bd; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 12px;">
+                                    T</div>
+                                <div>
+                                    <h4 style="margin: 0; font-size: 16px;">Tanvir Rahman Akash</h4>
+                                    <div style="color: #fabb05;">★★★★★</div>
+                                </div>
+                            </div>
+                            <p style="font-style: italic;">"He is a very responsible and helpful person. Professional
+                                electronics service center"</p>
+                        </div>
+                        <!-- Review 17 -->
+                        <div class="testimonial-card">
+                            <div class="reviewer-header"
+                                style="display: flex; align-items: center; margin-bottom: 12px;">
+                                <div class="reviewer-avatar"
+                                    style="width: 40px; height: 40px; background-color: #6a1b9a; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 12px;">
+                                    L</div>
+                                <div>
+                                    <h4 style="margin: 0; font-size: 16px;">Latasha Varela</h4>
+                                    <div style="color: #fabb05;">★★★★★</div>
+                                </div>
+                            </div>
+                            <p style="font-style: italic;">"I would highly recommend this place to friends and family.
+                                Very professional and friendly high quality customer service"</p>
+                        </div>
+                        <!-- Review 18 -->
+                        <div class="testimonial-card">
+                            <div class="reviewer-header"
+                                style="display: flex; align-items: center; margin-bottom: 12px;">
+                                <div class="reviewer-avatar"
+                                    style="width: 40px; height: 40px; background-color: #00695c; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 12px;">
+                                    A</div>
+                                <div>
+                                    <h4 style="margin: 0; font-size: 16px;">Aiden Nelson</h4>
+                                    <div style="color: #fabb05;">★★★★★</div>
+                                </div>
+                            </div>
+                            <p style="font-style: italic;">"Great place fast work"</p>
+                        </div>
+                        <!-- Review 19 -->
+                        <div class="testimonial-card">
+                            <div class="reviewer-header"
+                                style="display: flex; align-items: center; margin-bottom: 12px;">
+                                <div class="reviewer-avatar"
+                                    style="width: 40px; height: 40px; background-color: #558b2f; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 12px;">
+                                    F</div>
+                                <div>
+                                    <h4 style="margin: 0; font-size: 16px;">flesh Bonez</h4>
+                                    <div style="color: #fabb05;">★★★★★</div>
+                                </div>
+                            </div>
+                            <p style="font-style: italic;">"Fix my note 20 screen same day .best price in Glendale area"
+                            </p>
+                        </div>
+                        <!-- Review 20 -->
+                        <div class="testimonial-card">
+                            <div class="reviewer-header"
+                                style="display: flex; align-items: center; margin-bottom: 12px;">
+                                <div class="reviewer-avatar"
+                                    style="width: 40px; height: 40px; background-color: #ef6c00; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 12px;">
+                                    G</div>
+                                <div>
+                                    <h4 style="margin: 0; font-size: 16px;">Gobilam RJ</h4>
+                                    <div style="color: #fabb05;">★★★★★</div>
+                                </div>
+                            </div>
+                            <p style="font-style: italic;">"Highly recommend, same day service"</p>
+                        </div>
+                        <!-- Review 21 -->
+                        <div class="testimonial-card">
+                            <div class="reviewer-header"
+                                style="display: flex; align-items: center; margin-bottom: 12px;">
+                                <div class="reviewer-avatar"
+                                    style="width: 40px; height: 40px; background-color: #d84315; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 12px;">
+                                    J</div>
+                                <div>
+                                    <h4 style="margin: 0; font-size: 16px;">Jazmin Amaya</h4>
+                                    <div style="color: #fabb05;">★★★★★</div>
+                                </div>
+                            </div>
+                            <p style="font-style: italic;">"Same Day Service i got My Samsung S24 ultra repair in 1 Hour
+                                price also Reasonable"</p>
+                        </div>
+                        <!-- Review 22 -->
+                        <div class="testimonial-card">
+                            <div class="reviewer-header"
+                                style="display: flex; align-items: center; margin-bottom: 12px;">
+                                <div class="reviewer-avatar"
+                                    style="width: 40px; height: 40px; background-color: #4e342e; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 12px;">
+                                    K</div>
+                                <div>
+                                    <h4 style="margin: 0; font-size: 16px;">Katlin Ramirez</h4>
+                                    <div style="color: #fabb05;">★★★★★</div>
+                                </div>
+                            </div>
+                            <p style="font-style: italic;">"Came for iPhone 14 battery replacement! It was done really
+                                quick ! He was very professional! Best in all over Glendale area"</p>
+                        </div>
+                        <!-- Review 23 -->
+                        <div class="testimonial-card">
+                            <div class="reviewer-header"
+                                style="display: flex; align-items: center; margin-bottom: 12px;">
+                                <div class="reviewer-avatar"
+                                    style="width: 40px; height: 40px; background-color: #37474f; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 12px;">
+                                    M</div>
+                                <div>
+                                    <h4 style="margin: 0; font-size: 16px;">Maria Amador</h4>
+                                    <div style="color: #fabb05;">★★★★★</div>
+                                </div>
+                            </div>
+                            <p style="font-style: italic;">"I came in to have the screen replaced on my laptop, and I
+                                highly recommend this place. They do a great job and it's done by the date they tell
+                                you."</p>
+                        </div>
+                        <!-- Review 24 -->
+                        <div class="testimonial-card">
+                            <div class="reviewer-header"
+                                style="display: flex; align-items: center; margin-bottom: 12px;">
+                                <div class="reviewer-avatar"
+                                    style="width: 40px; height: 40px; background-color: #424242; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 12px;">
+                                    M</div>
+                                <div>
+                                    <h4 style="margin: 0; font-size: 16px;">Md Shahdat Hossain</h4>
+                                    <div style="color: #fabb05;">★★★★★</div>
+                                </div>
+                            </div>
+                            <p style="font-style: italic;">"Rated 5 stars on Google"</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-nav">
+                        <button class="carousel-btn" id="prevBtn" aria-label="Previous Review">←</button>
+                        <button class="carousel-btn" id="nextBtn" aria-label="Next Review">→</button>
                     </div>
                 </div>
             </section>
 
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const track = document.getElementById('testimonialTrack');
+                    const prevBtn = document.getElementById('prevBtn');
+                    const nextBtn = document.getElementById('nextBtn');
+                    const cards = document.querySelectorAll('.testimonial-card');
+
+                    let currentIndex = 0;
+
+                    function getCardsPerView() {
+                        if (window.innerWidth >= 1024) return 3;
+                        if (window.innerWidth >= 768) return 2;
+                        return 1;
+                    }
+
+                    function updateCarousel() {
+                        const cardsPerView = getCardsPerView();
+                        const cardWidth = 100 / cardsPerView;
+                        // Add gap allowance (approximate)
+                        const translateX = -(currentIndex * (100 / cardsPerView));
+
+                        // Slightly adjust if using gap in CSS
+                        // But standard percentage translate is robust enough for simple carousel
+                        // Let's rely on the CSS flex-basis and gap. 
+                        // To include gap properly, we can calculate based on card offsetWidth + gap
+
+                        const cardStyle = window.getComputedStyle(track);
+                        const gap = parseFloat(cardStyle.gap) || 30;
+                        const moveAmount = (cards[0].offsetWidth + gap) * currentIndex;
+
+                        track.style.transform = `translateX(-${moveAmount}px)`;
+
+                        // Update buttons
+                        prevBtn.disabled = currentIndex === 0;
+                        nextBtn.disabled = currentIndex >= cards.length - cardsPerView;
+                    }
+
+                    function nextSlide() {
+                        const cardsPerView = getCardsPerView();
+                        if (currentIndex < cards.length - cardsPerView) {
+                            currentIndex++;
+                            updateCarousel();
+                        }
+                    }
+
+                    function prevSlide() {
+                        if (currentIndex > 0) {
+                            currentIndex--;
+                            updateCarousel();
+                        }
+                    }
+
+                    nextBtn.addEventListener('click', nextSlide);
+                    prevBtn.addEventListener('click', prevSlide);
+
+                    // Keyboard Navigation
+                    document.addEventListener('keydown', function (e) {
+                        if (e.key === 'ArrowRight') {
+                            nextSlide();
+                        } else if (e.key === 'ArrowLeft') {
+                            prevSlide();
+                        }
+                    });
+
+                    // Handle Resize
+                    window.addEventListener('resize', updateCarousel);
+
+                    // Initial update
+                    updateCarousel();
+                });
+            </script>
+
             <!-- Process Steps -->
             <section class="process-section">
                 <h2>Device Service Process – Step by Step</h2>
-                <p class="section-subtitle">Many services may be completed the same day, depending on device condition and part availability.</p>
+                <p class="section-subtitle">Many services may be completed the same day, depending on device condition
+                    and part availability.</p>
                 <div class="process-grid">
                     <div class="process-card">
                         <div class="process-icon">🏪</div>
@@ -118,12 +687,14 @@
                     <div class="process-card">
                         <div class="process-icon">🔍</div>
                         <h3>We Get to Work</h3>
-                        <p>Our technicians provide careful, detail‑oriented device care using high‑quality components and industry‑standard tools.</p>
+                        <p>Our team provide careful, detail‑oriented device care using high‑quality components and
+                            industry‑standard tools.</p>
                     </div>
                     <div class="process-card">
                         <div class="process-icon">📏</div>
                         <h3>Test Your Device</h3>
-                        <p>You'll be able to check key functions on the spot to confirm the service was completed as discussed.</p>
+                        <p>You'll be able to check key functions on the spot to confirm the service was completed as
+                            discussed.</p>
                     </div>
                     <div class="process-card">
                         <div class="process-icon">👍</div>
@@ -138,13 +709,22 @@
                 <div class="about-content">
                     <div class="about-text">
                         <h2>About Us</h2>
-                        <p>We provide diagnostics and component-level services using industry-standard tools and established service methods. Whether you're experiencing display issues, power concerns, software-related performance symptoms, or general hardware conditions, our technicians are available to assist with evaluation and service options. We service a broad range of electronics, including smartphones, tablets, laptops, and desktop computers, and offer independent device support focused on clear communication and practical service options. Our approach emphasizes transparency, efficient service processes, and customer care throughout the service experience.</p>
+                        <p>we provide advanced diagnostics and component-level device services using industry-standard
+                            tools and established technical methods. Our experienced technicians support customers
+                            facing display concerns, power-related issues, software performance symptoms, and general
+                            hardware conditions through accurate evaluation and clear service guidance.We work with a
+                            wide range of consumer electronics, including smartphones, tablets, laptops, and desktop
+                            computers, offering independent device support tailored to each customer’s needs. Our
+                            service approach is built on transparency, efficient service processes, and consistent
+                            communication, ensuring customers understand their options at every stage of the service
+                            experience. we prioritize professionalism, technical accuracy, and customer care to deliver
+                            a dependable and straightforward service experience.</p>
                         <a class="btn btn-primary" href="tel:+16028974917">
                             <span>📞</span> Call Us
                         </a>
                     </div>
                     <div class="about-image">
-                        <img src="Screenshot-2026-01-07-124914.png" alt="About Us" onerror="this.src='fardin.jpg'"/>
+                        <img src="Screenshot-2026-01-07-124914.png" alt="About Us" onerror="this.src='fardin.jpg'" />
                     </div>
                 </div>
             </section>
@@ -155,36 +735,23 @@
                 <div class="features-grid">
                     <div class="feature-card">
                         <h3>Fast Turnaround</h3>
-                        <p>Most services are completed the same day, depending on part availability and device condition.</p>
+                        <p>Many services are completed within the same day, subject to device condition and component
+                            availability.</p>
                     </div>
                     <div class="feature-card">
-                        <h3>90‑Day Limited Warranty</h3>
-                        <p>Certain hardware-related services include a 90-day limited warranty, subject to terms and conditions.</p>
+                        <h3>60‑Day Limited Warranty</h3>
+                        <p>Select hardware-related services include a 60-day limited warranty, in accordance with
+                            applicable terms and conditions.</p>
                     </div>
                     <div class="feature-card">
                         <h3>Transparent Pricing</h3>
-                        <p>No hidden fees. No surprises. You'll always know what to expect before we begin.</p>
+                        <p>Clear, upfront pricing with no hidden charges. Service details and costs are explained before
+                            any work begins.</p>
                     </div>
                     <div class="feature-card">
                         <h3>Experienced Technicians</h3>
-                        <p>Our team has years of hands‑on experience with a wide range of devices and models.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Testimonials -->
-            <section class="testimonials-section">
-                <h2>What Our Customers Are Saying</h2>
-                <p class="section-subtitle">Customer reviews are user-submitted and reflect individual experiences.</p>
-                <div class="testimonials-grid">
-                    <div class="testimonial-card">
-                        <p>Great place with excellent service. The team was friendly, knowledgeable, and very efficient. Everything was handled quickly and smoothly. Highly recommend!</p>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>Outstanding customer service from start to finish. The staff went above and beyond and made the whole experience easy and stress-free. I'll definitely be coming back.</p>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>Fantastic experience overall. Clear communication, fair pricing, and fast service. Easily one of the best businesses I've dealt with. Highly recommended!</p>
+                        <p>Our team bring years of hands-on experience across a wide range of device types and models.
+                        </p>
                     </div>
                 </div>
             </section>
@@ -215,9 +782,9 @@
                     <div class="info-card">
                         <div class="info-header">
                             <span class="info-icon">🛡️</span>
-                            <h3>90‑Day Limited Warranty</h3>
+                            <h3>60-Day Limited Warranty</h3>
                         </div>
-                        <p>We stand behind our work. Most services include a 90‑day limited warranty, which covers:</p>
+                        <p>We stand behind our work. Most services include a 60-day limited warranty, which covers:</p>
                         <h5>✔ Covered</h5>
                         <ul>
                             <li>Component defects</li>
@@ -241,10 +808,11 @@
                         </div>
                         <h5>✔ Clear Business Identity</h5>
                         <ul class="contact-list">
-                            <li><a href="https://maps.app.goo.gl/PpAUg5F6bbAVJbVz7">📍 5830 W Thunderbird Rd Suite B-12, Glendale, AZ 85306</a></li>
+                            <li><a href="https://maps.app.goo.gl/PpAUg5F6bbAVJbVz7">📍 5830 W Thunderbird Rd Suite B-12,
+                                    Glendale, AZ 85306</a></li>
                             <li><a href="tel:6028974917">📞 (602) 897-4917</a></li>
-                            <li><a href="mailto:support@suncityphone.us">✉️ support@suncityphone.us</a></li>
-                            <li>🕐 Monday to Friday: 9 AM – 6 PM<br>Saturday 10 AM –4 PM<br>Sunday: 12 PM – 6 PM</li>
+                            <li><a href="mailto:info@phonerepairzoneaz.com">✉️ info@phonerepairzoneaz.com</a></li>
+                            <li>🕐 Monday to Friday: 8 AM – 6 PM<br>Saturday 10 AM –6 PM<br>Sunday: 10 PM – 6 PM</li>
                         </ul>
                         <h5>✔ No Misleading Claims</h5>
                         <p>We do not guarantee unrealistic outcomes or exaggerated performance.</p>
@@ -257,7 +825,10 @@
                             <span class="info-icon">🪟</span>
                             <h3>Brand Affiliation Disclaimer</h3>
                         </div>
-                        <p>Phone Repair Zone is an independent device service provider.<br/>We are not affiliated with, endorsed by, or authorized by Apple, Samsung, Google, Motorola, LG, or any other manufacturer.<br/>All trademarks, logos, and brand names are the property of their respective owners.</p>
+                        <p>Phone Repair Zone is an independent device service provider.<br />We are not affiliated with,
+                            endorsed by, or authorized by Apple, Samsung, Google, Motorola, LG, or any other
+                            manufacturer.<br />All trademarks, logos, and brand names are the property of their
+                            respective owners.</p>
                     </div>
 
                     <div class="info-card">
@@ -265,8 +836,10 @@
                             <span class="info-icon">🔒</span>
                             <h3>Privacy & Data Protection</h3>
                         </div>
-                        <p>We collect only the information needed to provide service — such as your name, contact details, and device information.<br/>We do not sell or rent your data.</p>
-                        <p>Customers are responsible for backing up data prior to service. Phone Repair Zone is not responsible for data loss</p>
+                        <p>We collect only the information needed to provide service — such as your name, contact
+                            details, and device information.<br />We do not sell or rent your data.</p>
+                        <p>Customers are responsible for backing up data prior to service. Phone Repair Zone is not
+                            responsible for data loss</p>
                     </div>
 
                     <div class="info-card">
@@ -274,11 +847,11 @@
                             <span class="info-icon">📄</span>
                             <h3>Terms & Conditions</h3>
                         </div>
-                        <p>Our Terms & Conditions explain service expectations, payment terms, device requirements, liability limitations, and warranty coverage.</p>
+                        <p>Our Terms & Conditions explain service expectations, payment terms, device requirements,
+                            liability limitations, and warranty coverage.</p>
                     </div>
                 </div>
             </section>
-
             <!-- Visit Us Section -->
             <section class="visit-section">
                 <div class="visit-content">
@@ -288,7 +861,8 @@
                         <ul class="contact-details">
                             <li>
                                 <span class="icon">📍</span>
-                                <a href="https://maps.app.goo.gl/PpAUg5F6bbAVJbVz7">5830 W Thunderbird Rd Suite B-12, Glendale, AZ 85306</a>
+                                <a href="https://maps.app.goo.gl/PpAUg5F6bbAVJbVz7">5830 W Thunderbird Rd Suite B-12,
+                                    Glendale, AZ 85306</a>
                             </li>
                             <li>
                                 <span class="icon">📞</span>
@@ -296,17 +870,21 @@
                             </li>
                             <li>
                                 <span class="icon">✉️</span>
-                                <a href="mailto:support@phonerepairzone.us">support@phonerepairzone.us</a>
+                                <a href="mailto:info@phonerepairzoneaz.com">info@phonerepairzoneaz.com</a>
                             </li>
                             <li>
                                 <span class="icon">🕐</span>
-                                <span>Monday to Friday: 9 AM – 6 PM<br>Saturday 10 AM –4 PM<br>Sunday: 12 PM – 6 PM</span>
+                                <span>Monday to Friday: 8 AM – 6 PM<br>Saturday 10 AM –6 PM<br>Sunday: 10 PM – 6
+                                    PM</span>
                             </li>
                         </ul>
                         <p>We look forward to helping you with your device needs.</p>
                     </div>
                     <div class="visit-map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3941.4251798934997!2d-112.18606832383688!3d33.61209554084237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b69fd4b4b70ef%3A0xdce5bb0fcd6beb88!2sPhone%20repair%20zone!5e1!3m2!1sen!2sus!4v1768421011898!5m2!1sen!2sus" width="100%" height="450" style="border:0;border-radius:20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3941.4251798934997!2d-112.18606832383688!3d33.61209554084237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b69fd4b4b70ef%3A0xdce5bb0fcd6beb88!2sPhone%20repair%20zone!5e1!3m2!1sen!2sus!4v1768421011898!5m2!1sen!2sus"
+                            width="100%" height="450" style="border:0;border-radius:20px;" allowfullscreen=""
+                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </section>
@@ -321,7 +899,8 @@
                         <ul class="footer-contact">
                             <li>
                                 <span class="icon">📍</span>
-                                <a href="https://maps.app.goo.gl/PpAUg5F6bbAVJbVz7">5830 W Thunderbird Rd Suite B-12, Glendale, AZ 85306</a>
+                                <a href="https://maps.app.goo.gl/PpAUg5F6bbAVJbVz7">5830 W Thunderbird Rd Suite B-12,
+                                    Glendale, AZ 85306</a>
                             </li>
                             <li>
                                 <span class="icon">📞</span>
@@ -333,7 +912,8 @@
                             </li>
                             <li>
                                 <span class="icon">🕐</span>
-                                <span>Monday to Friday: 9 AM – 6 PM<br>Saturday 10 AM –4 PM<br>Sunday: 12 PM – 6 PM</span>
+                                <span>Monday to Friday: 8 AM – 6 PM<br>Saturday 10 AM –6 PM<br>Sunday: 10 PM – 6
+                                    PM</span>
                             </li>
                         </ul>
                     </div>
@@ -374,4 +954,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
